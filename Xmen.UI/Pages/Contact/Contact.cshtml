@@ -1,0 +1,23 @@
+﻿@page
+@model Xmen.UI.Pages.Contact.ContactModel
+@{
+}
+
+<h1>Newsletter</h1>
+<div class="container">
+    @if (!string.IsNullOrEmpty(Model.Feedback))
+    {
+        <div class="alert alert-success">
+            <p>@Model.Feedback</p>
+        </div>
+    }
+    <form asp-page-handler="Subscribe">
+        <div class="form-group">
+            <label asp-for="Email">Email address:</label>
+            <input asp-for="Email" class="form-control" id="">
+            <span asp-validation-for="Email" class="alert alert-success" role="alert"></span>
+            <button type="submit">Subscribe</button>
+        </div>
+    </form>
+
+</div>
